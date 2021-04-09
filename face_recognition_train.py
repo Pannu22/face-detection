@@ -1,3 +1,4 @@
+import json
 import os
 from pathlib import Path
 
@@ -61,3 +62,6 @@ face_recognizer.train(features, labels)
 face_recognizer.save(r"model/face_recognizer_trainer.yml")
 np.save(r"model\features.npy", features)
 np.save(r"model\labels.npy", labels)
+with open("model/face_recognizer_label_mapping.json", "w") as label_mapping_json:
+    json.dump(labels_mapping, label_mapping_json, sort_keys=True)
+    label_mapping_json.close()
