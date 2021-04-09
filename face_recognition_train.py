@@ -59,7 +59,7 @@ face_recognizer = cv.face.LBPHFaceRecognizer_create()
 face_recognizer.train(features, labels)
 
 # Saving traineed face recognizer, features & labels
-face_recognizer.save(r"model/face_recognizer_trainer.yml")
+face_recognizer.save(r"model/face_recognizer_trained.yml")
 np.save(r"model\features.npy", features)
 np.save(r"model\labels.npy", labels)
 with open("model/face_recognizer_label_mapping.json", "w") as label_mapping_json:
